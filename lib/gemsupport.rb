@@ -1,5 +1,5 @@
 require 'gemsupport/version'
+require 'gemsupport/core_ext'
 
 module Gemsupport
-  # Your code goes here...
 end
