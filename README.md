@@ -1,4 +1,5 @@
 # Gemsupport
+[![Build Status](https://travis-ci.org/mdouchement/gemsupport.svg?branch=master)](https://travis-ci.org/mdouchement/gemsupport)
 
 TODO: Write a gem description
 
