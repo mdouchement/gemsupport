@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Gemsupport
   describe Console do
-    let(:dummy_class) { Class.new.include(Console) }
+    let(:dummy_class) { Class.new.send(:include, Console) }
 
     describe '.capture_console' do
       # rubocop:disable Output

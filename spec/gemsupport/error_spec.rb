@@ -2,7 +2,7 @@ require 'spec_helper'
 
 module Gemsupport
   describe Error do
-    let(:dummy_class) { Class.new.include(Error) }
+    let(:dummy_class) { Class.new.send(:include, Error) }
 
     describe '.silent_exit' do
       it 'catch SystemExit error' do
