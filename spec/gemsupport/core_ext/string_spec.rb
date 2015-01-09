@@ -58,4 +58,47 @@ describe 'String' do
       end
     end
   end
+
+  describe '#unindent' do
+    context 'when empty string' do
+      it 'does not remove anything' do
+        expect(''.unindent).to eq('')
+      end
+    end
+
+    context 'When simple line indentation' do
+      it 'removes the spaces' do
+        expect("\s\sabc".unindent).to eq('abc')
+      end
+
+      it 'removes the tabs' do
+        expect("\tabc".unindent).to eq('abc')
+      end
+
+      it 'removes the whintespaces' do
+        expect("\t\s\sabc".unindent).to eq('abc')
+      end
+    end
+
+    context 'when multi-line identation' do
+      it 'removes the whitespaces' do
+        expect("\t\sabc\n\t\sabc".unindent).to eq("abc\nabc")
+      end
+
+      it 'keeps relative indentation' do
+        expect("\tabc\n\t\tabc".unindent).to eq("abc\n\tabc")
+      end
+
+      it 'ignores blank lines for indent calculation' do
+        expect("\n\tabc\n\n\t\tabc\n".unindent).to eq("\nabc\n\n\tabc\n")
+      end
+    end
+  end
+
+  describe '#unindent!' do
+    let(:source) { "\s\sabc" }
+    it 'modifies string in place' do
+      expect { source.unindent! }.to change { source }.from("\s\sabc").to('abc')
+    end
+  end
 end
