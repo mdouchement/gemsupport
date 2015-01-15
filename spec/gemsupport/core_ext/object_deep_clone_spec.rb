@@ -20,25 +20,23 @@ describe Object do
           }
         end
         let!(:deep_cloned) { input.deep_clone }
-        let(:modify_clone) do
-          lambda do
-            deep_cloned[:another_key] = 'yolo'
-            deep_cloned[:ary].last[:k2] = 65
-            deep_cloned[:ary] << 'inserted value'
-          end
+
+        before do
+          deep_cloned[:another_key] = 'yolo'
+          deep_cloned[:ary].last[:k2] = 65
+          deep_cloned[:ary] << 'inserted value'
         end
 
         it 'does not change the original' do
-          expect { modify_clone.call }.to_not change { input }
+          expect(deep_cloned).to_not eq(input)
         end
 
         it 'changes the cloned object' do
-          expect { modify_clone.call }.to change { deep_cloned }
-            .from(input).to(key: 'trololo',
-                            another_key: 'yolo',
-                            ary: [{ k1: 12, k2: '23' },
-                                  { k1: 45, k2: 65 },
-                                  'inserted value'])
+          expect(deep_cloned).to eq(key: 'trololo',
+                                    another_key: 'yolo',
+                                    ary: [{ k1: 12, k2: '23' },
+                                          { k1: 45, k2: 65 },
+                                          'inserted value'])
         end
       end
 

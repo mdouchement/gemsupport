@@ -11,3 +11,17 @@ Object.class_eval do
     raise
   end
 end
+
+Hash.class_eval do
+  def deep_clone(is_root: true)
+    each_with_object({}) do |(k, v), hsh|
+      hsh[k.deep_clone(is_root: false)] = v.deep_clone(is_root: false)
+    end
+  end
+end
+
+Array.class_eval do
+  def deep_clone(is_root: true)
+    map { |e| e.deep_clone(is_root: false) }
+  end
+end
