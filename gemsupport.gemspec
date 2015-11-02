@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['marc.douchement@predicsis.com']
   spec.summary       = %(q{Add support for gem like activesupport, but without Rails})
   spec.description   = %(q{Add support for gem like activesupport, but without Rails})
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/mdouchement/gemsupport'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
