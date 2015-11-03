@@ -1,7 +1,7 @@
 require 'gemsupport/version'
-require 'gemsupport/core_ext'
-require 'gemsupport/console'
-require 'gemsupport/error'
+require 'gemsupport/refinements'
 
 module Gemsupport
+  autoload :Console, 'gemsupport/console'
+  autoload :Error, 'gemsupport/error'
 end

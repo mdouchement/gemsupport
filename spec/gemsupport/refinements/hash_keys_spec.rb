@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Hash do
+  using Gemsupport::HashKeys
+
   let(:simple) do
     {
       strings: { 'a' => 1, 'b' => 2 },
