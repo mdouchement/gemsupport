@@ -1,7 +1,7 @@
 # Gemsupport
 [![Build Status](https://travis-ci.org/mdouchement/gemsupport.svg?branch=master)](https://travis-ci.org/mdouchement/gemsupport)
 
-# Requirments
+# Requirements
 - Ruby >= 2.0 (Refinements needed)
 
 ## Installation
