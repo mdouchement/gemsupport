@@ -37,7 +37,7 @@ module MyModule # or class
   using Gemsupport::HashKeys # Symbolization & stringification of Hash keys
   using Gemsupport::DeepMerge # Deep merge a Hash
   using Gemsupport::DeepClone # Deep clone an object
-  using Gemsupport::StringInterations # methods #underscore, #camelize, #unindent & #unindent!
+  using Gemsupport::StringInteractions # methods #underscore, #camelize, #unindent & #unindent!
 end
 ```
 
