@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe 'String' do
+  using Gemsupport::StringInteractions
+
   describe '#underscore' do
     context 'when snake_case word' do
       it 'does nothing' do

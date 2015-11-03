@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Hash do
+  using Gemsupport::DeepMerge
+
   let(:input_a) do
     { a: { b: { c: 3 } } }
   end

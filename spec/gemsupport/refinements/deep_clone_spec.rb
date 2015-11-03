@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Object do
+  using Gemsupport::DeepClone
+
   describe '#deep_clone' do
     context 'when deep clone action is impossible' do
       it 'raises an error' do

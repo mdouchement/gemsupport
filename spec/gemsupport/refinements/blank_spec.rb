@@ -13,6 +13,8 @@ class EmptyFalse
 end
 
 describe 'blank' do
+  using Gemsupport::Blank
+
   context 'when it is a blank object' do
     [EmptyTrue.new, nil, false, '', ' ', " \n\t \r ", '　', "\u00a0", [], {}].each do |blank_value|
       describe "#{blank_value.class}#blank?" do
